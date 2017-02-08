@@ -21,7 +21,6 @@ describe('joi', function () {
       })
       .act('a:1,b:2', function (err, out) {
         if (err) return done(err)
-
         Assert.equal(3, out.c)
 
         this.act('a:1', function (err, out) {
@@ -159,7 +158,7 @@ describe('joi', function () {
     }
   })
 
-  it('parambulator-legacy test default value seneca > 3.x', function (done) {
+  it.skip('parambulator-legacy test default value seneca > 3.x', function (done) {
     var si = Seneca({log: 'silent', legacy: {error_codes: false, validate: false}})
     if (si.version < '3.0.0') {
       return done()
